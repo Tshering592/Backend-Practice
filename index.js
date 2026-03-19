@@ -6,6 +6,8 @@ console.log('Hello, World!');
 
 const express = require("express");
 const connectToDatabase = require("./db/db");
+const dns = require("node:dns");
+dns.setServers(['1.1.1.1']);
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -21,3 +23,4 @@ app.listen(PORT, () => {
 app.get("/", (req, res) => {
     res.send("Tshering Funchok Lama is learning Node.js");
 });
+

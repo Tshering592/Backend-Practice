@@ -2,12 +2,14 @@
 // gvyma1MOewTreS2p
 
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const Mongo_URI = "mongodb+srv://tsheringfunchok_db_user:gvyma1MOewTreS2p@cluster0.hkcj1gm.mongodb.net/";
+const DB_URI = process.env.DB_URL;
 
 const connectToDatabase = async () => {
     try {
-        await mongoose.connect(Mongo_URI);
+        await mongoose.connect(DB_URI);
         console.log("Database is connected successfully");
     } catch (error) {
         console.log(`Database connection error is ${error}`);
